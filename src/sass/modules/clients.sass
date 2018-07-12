@@ -1,0 +1,29 @@
+@import "../mixins/mixins"
+
+.content_clients
+  padding: 100px 0
+  @include responce_to($phone-b)
+    display: none
+.clients
+  width: 70%
+  display: flex
+  flex-flow: row nowrap
+  justify-content: space-between
+  align-items: center
+  margin: 0 auto
+  @include responce_to($phone-b)
+    flex-flow: column nowrap
+  .client
+    @include responce_to($phone-b)
+      margin: 10px 0
+    img
+      width: 100%
+    &:hover
+      .client_image__hovered
+        display: block
+      .client_image
+        display: none
+    .client_image
+      display: block
+    .client_image__hovered
+      display: none

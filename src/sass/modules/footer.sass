@@ -1,0 +1,89 @@
+@import "../mixins/mixins"
+
+footer
+  background: #000
+  display: flex
+  flex-flow: row nowrap
+  justify-content: space-around
+  padding: 50px 15%
+  @include responce_to($phone-b)
+    flex-flow: column nowrap
+.footer_content-column
+  width: 25%
+  display: flex
+  flex-flow: column nowrap
+  justify-content: flex-start
+  @include responce_to($phone-b)
+    width: 100%
+    align-items: center
+    text-align: center
+    margin-bottom: 20px
+    p
+      width: 100%
+  p
+    color: #FFF
+    margin: 20px 0 40px 0
+    line-height: 1.8em
+    width: 80%
+  .content-text_header
+    color: #FFF
+  a:hover
+    color: $header-color
+  .wrapper
+    align-items: center
+    justify-content: flex-start
+    margin-bottom: 20px
+    @include responce_to($phone-b)
+      width: 100%
+    .wrapper-vert
+      padding: 0
+    i
+      width: 30px
+      height: 30px
+      border: 1px solid #FFFFFF
+      margin-right: 10px
+      color: $header-color
+    .content-text_description
+      width: 70%
+      margin: 0
+      color: #FFF
+    a
+      & .content-text_description
+        width: 100%
+
+  i
+    display: flex
+    justify-content: center
+    align-items: center
+    color: #FFFFFF
+    &:hover
+      cursor: pointer
+      background: #FFFFFF
+      color: $header-color
+.footer_gallery
+  display: flex
+  flex-flow: column wrap
+  height: 200px
+  width: 90%
+  align-items: flex-start
+  justify-content: space-evenly
+.photo
+  width: 30%
+  position: relative
+  transition: all .3s ease-in-out
+  &:hover
+    .gallery-img_overlay
+      opacity: 1
+      top: 0
+      height: 100%
+      z-index: 6
+  img
+    width: 100%
+.footer-list
+  display: flex
+  flex-flow: column
+  justify-content: space-around
+  li
+    font-size: 1.2em
+    text-transform: uppercase
+    margin: 10px 0

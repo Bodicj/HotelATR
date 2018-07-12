@@ -1,0 +1,47 @@
+@import "../mixins/mixins"
+.member
+  position: relative
+  display: flex
+  align-items: start
+  justify-content: center
+  width: 30%
+  height: 500px
+  overflow: hidden
+  margin: 20px 0
+  .member-descr
+    position: absolute
+    height: 0
+    left: 0
+    bottom: 0
+    opacity: 0
+    background: rgba(0,0,0,.6)
+    width: 100%
+    z-index: 6
+    transition: all ease-in-out .5s
+    padding: 20px auto
+    .member-name
+      margin-top: 20px
+      text-transform: capitalize
+      color: #FFFFFF
+      text-align: center
+    .content-text_description
+      width: 70%
+      color: #FFFFFF
+      text-align: center
+      margin: 10px auto
+    .social-icons
+      width: 70%
+      margin: 20px auto
+      display: flex
+      flex-flow: row nowrap
+      justify-content: center
+      i
+        margin: 0 20px
+        font-size: 1.5em
+        &:hover
+          color: $header-color
+  &:hover
+    .member-descr
+      height: 50%
+      opacity: 1
+

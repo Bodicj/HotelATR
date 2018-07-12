@@ -1,0 +1,57 @@
+<form class="form final-booking popup" id="main_booking_form">
+    <h2 class="column_header">Book Now</h2>
+    <div class="select select__date">
+        <input id="arrive_data" name="arrive_data" class="form_select__date reservation-form_select__date" placeholder="Arrive date"
+               required="required" autocomplete="off"/>
+    </div>
+    <div class="select select__date">
+        <input id="departurer_data" name="departurer_data" class="form_select__date reservation-form_select__date" placeholder="Departure date"
+               required="required" autocomplete="off"/>
+    </div>
+    <div class="select">
+        <input id="adults" name="adults" class="reservation-form_select__date" value="0" min="0" type="number" placeholder="Adults amount"
+               required="required" />
+    </div>
+    <div class="select">
+        <input id="children" name="children" class="reservation-form_select__date" type="number" placeholder="Children amount"
+        />
+    </div>
+    <div class="select">
+        <input id="room_type" name="type" type="text" readonly="readonly" class="reservation-form_select__date" placeholder="Room Type"/>
+    </div>
+    <div class="select">
+        <input id="email" name="email" type="email" class="reservation-form_select__date" placeholder="Your E-Mail"
+               required="required" autocomplete="email"/>
+    </div>
+    <div class="select">
+        <input id="first_name" name="first_name" class="reservation-form_select__date" placeholder="First Name"
+               required="required" autocomplete="given-name"/>
+    </div>
+    <div class="select">
+        <input id="last_name" name="last_name" class="reservation-form_select__date" placeholder="Last Name"
+               required="required" autocomplete="additional-name"/>
+    </div>
+    <div class="select">
+        <input id="phone_num" name="phone_num" class="reservation-form_select__date" placeholder="Phone Number"
+               required="required" autocomplete="tel"/>
+    </div>
+    <div class="select">
+        <input id="Fax" name="fax" class="reservation-form_select__date" placeholder="Fax" autocomplete="fax"/>
+    </div>
+    <textarea name="specials" placeholder="Special Requirements"  id="reservation-form_textarea" cols="30" rows="10" autocomplete="off"></textarea>
+    <button type="submit" class="main-button main-button__black">
+        <span class="main-button_background"></span>
+        <p class="button_text">Book Now</p>
+    </button>
+</form>
+<!--
+width: 45%;
+    position: relative;
+    border: 1px solid #a9a9a9;
+    margin: 15px 0;
+
+        width: 95%;
+    padding: 14px;
+    margin: 15px 0;
+}
+-->

@@ -1,0 +1,34 @@
+$phone-b : '(max-width: 450px)'
+$phone-md : '(max-width: 380px)'
+$phone-sm : '(max-width: 320px)'
+$tablet-portrait: '(max-device-width: 980px)'
+$tablet-landscape: '(min-width: 768px) and (max-width: 979px)'
+$laptop: '(max-width: 1440px)'
+$sm_laptop: '(max-width: 1170px)'
+$tablet: '(max-width: 1000px)'
+
+@mixin responce_to($media)
+  @media #{$media}
+    @content
+
+$header-color: #B5876D
+$hover-text: #663d15
+$dark-text: #444
+$pricing_background: #F1F1F1
+
+
+@mixin label($label-before)
+  position: relative
+  padding-left: 40px
+  color: #000000
+  font-weight: 600
+  font-size: 1em
+  display: flex
+  &:hover
+    color: $hover-text
+    cursor: pointer
+  &:before
+    content: url($label-before)
+    position: absolute
+    top: 3px
+    left: 0

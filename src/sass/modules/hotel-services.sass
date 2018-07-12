@@ -1,0 +1,83 @@
+@import "../mixins/mixins"
+
+.container_filter__services
+  display: flex
+  flex-flow: row nowrap
+  justify-content: space-between
+  width: 70%
+  margin: 0 auto
+  align-items: flex-start
+  height: 460px
+  @include responce_to($phone-b)
+    flex-flow: column nowrap
+    margin: 0
+    width: 100%
+    padding: 10px
+    height: auto
+.content_services
+  .filter
+    display: flex
+    flex-flow: column nowrap
+    width: 40%
+    min-height: 100%
+    justify-content: space-between
+    @include responce_to($phone-b)
+      width: 100%
+    label
+      display: flex
+      flex-flow: row nowrap
+      justify-content: space-between
+      padding: 10px
+      background: #EEEEEE
+      margin: 5px 0
+      transition: all .4s ease-in-out
+      &:nth-child(2)
+        margin-top: 0
+      &:last-child
+        margin-bottom: 0
+      &:hover
+        cursor: pointer
+      .activeLogo
+        visibility: hidden
+        width: 0
+        transition: all .3s ease-in-out
+      .nonActiveLogo
+        visibility: visible
+        width: 10%
+        display: flex
+        justify-content: center
+        align-items: center
+        transition: all .3s ease-in-out
+    input[type=radio]
+      display: none
+    input[type=radio]:checked + label
+      background: $header-color
+      color: #FFFFFF
+      .activeLogo
+        visibility: visible
+        width: 13%
+        display: flex
+        justify-content: center
+        align-items: center
+      .nonActiveLogo
+        visibility: hidden
+        width: 0
+  .filter_text
+    width: 87%
+    padding: 0 20px
+    overflow: hidden
+    h3
+      font-size: 1.4em
+      margin: 0 0 15px 0
+    p
+      font-size: 1.2em
+  .filter-result
+    width: 50%
+    @include responce_to($phone-b)
+      width: 100%
+      margin: 10px 0
+    img
+      display: none
+      width: 100%
+    .active_img
+      display: block

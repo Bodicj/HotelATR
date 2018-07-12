@@ -1,0 +1,34 @@
+<form class="form reservation-form">
+    <div class="select select__date">
+        <input id="arrive_data" name="arrive_data" class="form_select__date reservation-form_select__date"
+               placeholder="Arrive date" required="required" autocomplete="off"/>
+    </div>
+    <div class="select select__date">
+        <input id="departurer_data" name="departurer_data" class="form_select__date reservation-form_select__date"
+               placeholder="Departure date" required="required" autocomplete="off"/>
+    </div>
+    <div class="select">
+        <select name="adults" id="adults" class="reservation-form_select">
+            <option>adults</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+    <div class="select">
+        <select name="children" id="children" class="reservation-form_select">
+            <option>childrens</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+    <button type="submit" class="main-button main-button__black">
+        <span class="main-button_background"></span>
+        <p class="button_text">Check availability</p>
+    </button>
+</form>

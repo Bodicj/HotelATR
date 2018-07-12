@@ -1,0 +1,136 @@
+@import "../mixins/mixins"
+.event_presentation
+  display: flex
+  flex-flow: row wrap
+  width: 70%
+  margin: 0 auto
+  align-items: flex-start
+  justify-content: space-between
+  @include responce_to($phone-b)
+    width: 100%
+    flex-flow: column nowrap
+    padding: 0 10px
+.gallery_presentation
+  display: flex
+  flex-flow: column wrap
+  align-items: flex-start
+  justify-content: flex-start
+  height: 598px
+  @include responce_to($phone-b)
+    height: auto
+    padding: 0 10px
+  .gallery_image
+    width: 25%
+    transition: all .3s ease-in-out
+    position: relative
+    @include responce_to($phone-b)
+      width: 100%
+    img
+      height: 100%
+      width: 100%
+    &:hover
+      .gallery-img_overlay
+        opacity: 1
+        top: 0
+        height: 100%
+        z-index: 6
+    &__full
+      height: 100%
+    &__md
+      height: 60%
+    &__sm
+      height: 40%
+.event
+  height: 500px
+  margin: 2.5px
+  position: relative
+  &__md
+    width: calc(60% - 5px)
+    @include responce_to($phone-b)
+      width: 100%
+  &__sm
+    width: calc(40% - 5px)
+    @include responce_to($phone-b)
+      width: 100%
+  .event-background
+    width: 100%
+    height: 100%
+    position: relative
+  &::before
+    content: ''
+    width: 100%
+    height: 0
+    left: 0
+    position: absolute
+    bottom: 0
+    background: rgba(0,0,0,.5)
+    z-index: 3
+    transition: all ease-in-out .3s
+  &:hover
+    &::before
+      height: 100%
+    .hover-text
+      top: 73%
+      min-height: 22%
+      &::before
+        height: 100%
+        z-index: 9
+  .hover-text
+    width: 84%
+    left: 5%
+    min-height: 0
+    top: 85%
+    transform: translateX(0)
+    max-width: 400px
+    z-index: 6
+    &::before
+      content: ''
+      width: 3px
+      left: 0
+      bottom: 0
+      height: 0
+      background: #FFF
+      transition: all ease-in-out .3s
+      position: absolute
+    .event-name, .event-manager, .event-descr
+      text-align: start
+      color: #FFF
+      padding-left: 10px
+    .event-name
+      font-size: 1.8em
+      line-height: 0.8em
+      text-transform: uppercase
+      margin: 0 0 10px 0
+    .event-manager
+      color: $header-color
+      font-size: 2em
+      margin: 0 0 10px 0
+    .event-descr
+      font-size: 1em
+.gallery-img_overlay
+  position: absolute
+  background: rgba(0,0,0, .5)
+  left: 0
+  width: 100%
+  top: 50%
+  height: 0
+  opacity: 0
+  overflow: hidden
+  z-index: 0
+  transition: all .4s ease-in-out
+  display: flex
+  justify-content: center
+  align-items: center
+  i
+    padding: 10px
+    margin: 15px
+    border-radius: 50%
+    border: .5px solid #FFF
+    font-size: 1em
+    color: #FFF
+    transition: all .3s ease-in-out
+    &:hover
+      background: #FFF
+      color: $header-color
+      border-color: $header-color
+      cursor: pointer

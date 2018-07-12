@@ -1,0 +1,147 @@
+@import "../mixins/mixins"
+.container_content
+  width: 70%
+  margin: 50px auto 0
+  display: flex
+  flex-flow: row nowrap
+  justify-content: space-between
+  align-items: flex-start
+  aside
+    width: 30%
+  main
+    width: 65%
+    section
+.column_header
+  font-size: 2em
+  position: relative
+  padding-bottom: 5px
+  text-transform: uppercase
+  margin: 20px 0
+  width: 100%
+  &::after
+    content: ''
+    width: 150px
+    background: $header-color
+    height: 2px
+    position: absolute
+    bottom: 0
+    left: 0
+#room-services
+  ul
+    list-style-type: none
+    display: flex
+    flex-flow: column wrap
+    height: 140px
+    width: 100%
+    li
+      width: 30%
+      font-size: 1em
+      color: #000
+      padding: 8px 0 8px 20px
+      position: relative
+      &:before
+        content: '\f00d'
+        font-family: 'FontAwesome', sans-serif
+        font-size: 1em
+        font-weight: 400
+        color: red
+        left: 0
+        top: 50%
+        transform: translateY(-50%)
+        position: absolute
+    .active
+      &::before
+        content: '\f00c'
+        font-family: 'FontAwesome', sans-serif
+        font-size: 1em
+        font-weight: 400
+        color: #2ab92a
+        position: absolute
+        left: 0
+        top: 50%
+        transform: translateY(-50%)
+
+#similar-rooms
+  .column_header
+    margin: 20px 0 20px 15%
+.aside_column
+  background: $pricing_background
+  width: 100%
+  padding: 10%
+  margin: 20px 0
+  &:first-child
+    margin-top: 0
+  .select
+    width: 100%
+    margin: 10px auto
+    background: #FFFFFF
+  button
+    margin: 10px auto
+    width: 100%
+#aside_contacts
+  .wrapper
+    justify-content: flex-start
+    margin: 20px 0
+    i
+      margin-right: 10px
+    .wrapper-vert
+      padding: 0
+      width: 50%
+      a
+        line-height: .8em
+.slider_gallery
+  .big-images
+    position: relative
+    img
+      width: 0
+      visibility: hidden
+    .active
+      width: 100%
+      visibility: visible
+  .sm-images
+    display: flex
+    flex-flow: row nowrap
+    justify-content: space-between
+    align-items: flex-start
+    width: 100%
+    position: relative
+    transition: all .3s ease-in-out
+    .prev, .next
+      font-family: FontAwesome, sans-serif
+      position: absolute
+      color: #000
+      height: 100%
+      width: 40px
+      top: 0
+      display: flex
+      background: rgba(255,255,255,.8)
+      align-items: center
+      justify-content: center
+      font-size: 2em
+      cursor: pointer
+      &:hover
+        cursor: pointer
+    .prev
+      left: 0
+    .next
+      right: 0
+    .sm-images__disabled
+      color: dimgrey
+      &:hover
+        cursor: default
+    img
+      width: 0
+      visibility: hidden
+      display: none
+    .active
+      width: 32%
+      visibility: visible
+      display: block
+#room-price
+  position: absolute
+  bottom: 0
+  right: 0
+  background: rgba(0,0,0,.8)
+  color: #FFF
+  padding: 20px 30px
+  transform: translateY(-100%)

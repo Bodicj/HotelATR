@@ -1,0 +1,143 @@
+@import "../mixins/mixins"
+a
+  color: #FFF
+.wrapper
+  display: flex
+  flex-flow: row nowrap
+  justify-content: space-between
+  align-items: flex-start
+.wrapper-vert
+  display: flex
+  flex-flow: row wrap
+  align-items: center
+  justify-content: flex-start
+  padding: 20px 0
+.main-button
+  padding: 15px 39px
+  position: relative
+  color: $header-color
+  background: #FFF
+  transition: all ease-in-out .3s
+  border: none
+  font-size: 1.3em
+  text-transform: uppercase
+  .main-button_background
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 0
+    transition: all ease-out .2s
+    background: $header-color
+    z-index: 3
+  .button_text
+    font-weight: 600
+    font-size: 1em
+    position: relative
+    margin: 0
+    z-index: 6
+    padding: 0
+  &:hover
+    cursor: pointer
+    .main-button_background
+      height: 100%
+    .button_text
+      color: #FFFFFF
+  &__black
+    color: #FFFFFF
+    background: $header-color
+    .main-button_background
+      background: #000000
+  &__white
+    color: #FFFFFF
+    background: $header-color
+    margin: auto
+    .button_text
+      color: white
+    &:hover
+      .button_text
+        color: $header-color
+    .main-button_background
+      background: #FFFFFF
+.social-icons
+  color: #FFFFFF
+  font-size: 1em
+  width: 100%
+  display: flex
+  flex-flow: row nowrap
+  align-items: flex-start
+  justify-content: flex-start
+  @include responce_to($phone-b)
+    justify-content: center
+  &__bordered
+    i
+      &:first-child
+        margin-left: 0
+      &:last-child
+        margin-right: 0
+      width: 30px
+      height: 30px
+      display: flex
+      justify-content: center
+      align-items: center
+      border: 1px solid #FFFFFF
+      margin: 0 3px
+.container_content__grid
+  width: 70%
+  margin: 0 auto
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-between
+  align-items: flex-start
+  @include responce_to($phone-b)
+    width: 100%
+    padding: 0 10px
+.place
+  margin-bottom: 20px
+  .photo
+    width: 100%
+  .content-text_header
+    margin: 15px 0
+    font-weight: 400
+    text-transform: none
+#map
+  width: 100%
+  height: 50vh
+  filter: grayscale(100%)
+.contact-us
+  width: 70%
+  display: flex
+  flex-flow: row nowrap
+  justify-content: space-between
+  margin: 40px auto
+  .feedback-form
+    width: 60%
+    input
+      width: 45%
+      padding: 15px
+      border: none
+      background: $pricing_background
+    textarea
+      width: 100%
+      margin: 10px 0
+      height: 150px
+      padding: 15px
+      border: none
+      background: $pricing_background
+  .contact-info
+    width: 20%
+    .social-icons
+      i
+        color: #000
+    .wrapper
+      justify-content: start
+      align-items: start
+      padding-left: 10px
+      i
+        padding-top: 5px
+      .wrapper-vert
+        padding: 0
+        margin-left: 10px
+      .content-text_description
+        margin-left: 10px
+

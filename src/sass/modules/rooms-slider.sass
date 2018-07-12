@@ -1,0 +1,122 @@
+@import "../mixins/mixins"
+.content_heading
+  width: 70%
+  text-align: center
+  margin: 50px auto
+  @include responce_to($phone-b)
+    width: 100%
+    padding: 10px
+  .content-text_description
+    width: 45%
+    margin: 0 auto
+    @include responce_to($phone-b)
+      width: 100%
+.rooms
+  width: 100%
+  display: flex
+  flex-flow: row nowrap
+  overflow-x: hidden
+  @include responce_to($phone-b)
+    flex-flow: column nowrap
+    padding: 10px
+.room
+  height: 600px
+  width: 25%
+  position: relative
+  @include responce_to($phone-b)
+    width: 100%
+  .main-button
+    bottom: 20%
+    left: 50%
+    opacity: 0
+    position: absolute
+    transform: translateY(40px) translateX(-50%)
+    margin: 0
+    transition: all 0.3s ease-in-out 0.1s
+  .room_background
+    background-size: cover
+    height: 100%
+    left: 0
+    position: absolute
+    top: 0
+    transition: all 0.5s ease 0s
+    width: 100%
+  &:hover
+    .room_background, .hover_room
+      left: -60px
+      width: calc(100% + 120px)
+      z-index: 3
+      @include responce_to($phone-b)
+        left: auto
+        width: 100%
+    .hover_room
+      z-index: 6
+      background: rgba(0,0,0,.7)
+    .hover-text
+      max-height: 100%
+      top: 30%
+      @include responce_to($phone-b)
+        width: 60%
+    .main-button
+      opacity: 1
+      bottom: 0
+      transform: translateY(0px) translateX(-50%)
+      transition-delay: 0.2s
+    .p-amount
+      opacity: 1
+      transform: translateX(0px)
+      transition-delay: 0.3s
+.hover_room
+  bottom: 0
+  left: 0
+  overflow: hidden
+  position: absolute
+  top: 0
+  width: 100%
+  height: 100%
+  z-index: 0
+  transition: all 0.5s ease 0s
+.hover-text
+  top: 50%
+  color: #ffffff
+  position: absolute
+  left: 50%
+  height: 30%
+  transform: translateX(-50%)
+  font-family: 'Lato', sans-serif
+  transition: all 0.6s ease-in-out
+  max-height: 1.6em
+  overflow-y: hidden
+  justify-content: space-between
+  @include responce_to($phone-b)
+    height: 40%
+  h3
+    font-size: 1.6em
+    margin-bottom: 20px
+    text-align: center
+    &:hover
+      a
+        color: $header-color
+    a
+      transition: all ease-in-out .2s
+      font-size: 1em
+      text-transform: uppercase
+      color: #FFF
+  p
+    text-align: center
+.p-amount
+  font-weight: 600
+  bottom: 26px
+  color: #ffffff
+  position: absolute
+  right: 100px
+  transform: translateX(200px)
+  transition: all 0.3s ease-in-out 0.1s
+  z-index: 2
+  @include responce_to($phone-b)
+    right: 20px
+  span
+    font-size: 1.6em
+    display: block
+    word-wrap: normal
+

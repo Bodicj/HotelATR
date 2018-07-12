@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    //= templates/head.html
+</head>
+<body>
+
+//= templates/header.html
+<section class="breadcrumbs">
+    <div class="breadcrumbs-text">
+        <h1>Contact us</h1>
+        <p>A quality room of hotel ATR with sea or mountain view</p>
+    </div>
+    <ul class="breadcrumbs-list">
+        <li class="link">
+            <a href="index.html">Home</a>
+        </li>
+        <li class="current-index">
+            <p>contact us</p>
+        </li>
+    </ul>
+</section>
+<div id="map"></div>
+<section class="contact-us">
+    <div class="contact-info">
+        <h3 class="content-text_header">contact info</h3>
+        <div class="wrapper">
+            <i class="fas fa-envelope"></i>
+            <div class="wrapper-vert">
+                <a href="mailto:devitems@gmail.com" class="content-text_description">devitems@gmail.com</a>
+            </div>
+        </div>
+        <div class="wrapper">
+            <i class="fas fa-phone"></i>
+            <div class="wrapper-vert">
+                <a href="tel:+66025624857" class="content-text_description">+660 256 24857</a>
+            </div>
+        </div>
+        <div class="wrapper">
+            <i class="fas fa-map-marker-alt"></i>
+            <p class="content-text_description">House No 27, Road No 07,
+                East Road, Dhaka, Bangladesh</p>
+        </div>
+        <h3 class="content-text_header">Socials</h3>
+        <div class="social-icons social-icons__bordered">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fas fa-rss"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-pinterest-p"></i>
+        </div>
+    </div>
+    <form class="feedback-form">
+        <h3 class="content-text_header">send your massage</h3>
+        <div class="wrapper">
+            <input type="text" placeholder="Your Name" />
+            <input type="email" placeholder="Your E-Mail"/>
+        </div>
+        <textarea placeholder="Your Comment"></textarea>
+        <button type="submit" class="main-button main-button__black">
+            <span class="main-button_background"></span>
+            <a href="#" class="button_text">Send</a>
+        </button>
+    </form>
+</section>
+//= templates/clients.html
+//= templates/sign-up-subscription.html
+//= templates/footer.html
+<script>
+    function initMap() {
+        var uluru = {lat: 23.763372, lng: 90.432009};
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 17, center: uluru});
+        var marker = new google.maps.Marker({position: uluru, map: map});
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDK_47t7C4JFOIBtvZS3ynCe_HDuTX14xc&callback=initMap">
+</script>
+<div class="overlay">
+</div>
+//= templates/final-booking.html
+<div id="message-box" class="popup">
+    <h3 id="message-box_heading">Booking</h3>
+    <p id="message-box_message" class="message"> Dear Bohdan Ilba. Youre number 'Royal' has been reserved for 08/17/2018 - 08/24/2018.</p>
+    <span id="message-box_price"></span>
+    <button type="button" id="message-box_button" class="main-button main-button__black">
+        <span class="main-button_background"></span>
+        <p class="button_text">Finish</p>
+    </button>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>

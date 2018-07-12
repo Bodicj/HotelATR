@@ -1,0 +1,87 @@
+@import "../mixins/mixins"
+.rooms-grid_room
+  display: flex
+  position: relative
+  width: 30%
+  margin-top: 20px
+  height: 500px
+  @include responce_to($phone-b)
+    width: 100%
+  &::after
+    content: ''
+    position: absolute
+    z-index: 3
+    top: 50%
+    height: 0
+    width: 100%
+    background: rgba(0,0,0,.3)
+    transition: all .3s ease-in-out
+  img
+    width: 100%
+  &:hover
+    &::after
+      height: 100%
+      top: 0
+    .hover_text
+      //height: 100%
+      //top: 0
+      //transform: translateY(0)
+      button
+        transition: all .5s ease-in-out .7s
+        top: calc(10% + 6em + 30px)
+        opacity: 1
+      h3
+        opacity: 1
+        top: 10%
+        transition: all .5s ease-in-out
+      .room-price
+        text-transform: capitalize
+        opacity: 1
+        top: calc(10% + 1.5em + 10px)
+        transition: all .5s ease-in-out .3s
+      .room_descr
+        top: calc(10% + 3em + 20px)
+        opacity: 1
+        transition: all .5s ease-in-out .5s
+.hover_text
+  position: absolute
+  width: 100%
+  left: 0
+  height: 50%
+  top: 50%
+  transform: translateY(-50%)
+  background: rgba(0,0,0,.7)
+  overflow: hidden
+  transition: all .3s ease-in-out
+  z-index: 6
+  h3, .room-price, .room_descr
+    position: absolute
+    top: 100%
+    left: 50%
+    transform: translateX(-50%)
+    width: 50%
+    text-align: center
+    color: #FFF
+    margin: 10px 0
+    z-index: 9
+    opacity: 0
+  h3
+    text-transform: uppercase
+    top: 50%
+    transform: translateX(-50%) translateY(-50%)
+    opacity: 1
+    font-size: 1.5em
+    width: 100%
+  .main-button
+    top: 100%
+    position: absolute
+    z-index: 6
+    left: 50%
+    transform: translateX(-50%)
+    padding: 10px 20px
+    .button_text
+      font-size: .8em
+  .room-price
+    span
+      font-weight: 600
+      font-size: 1.5em

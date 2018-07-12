@@ -1,0 +1,45 @@
+@import "../mixins/mixins"
+
+.subscribtion
+  width: 100%
+  display: flex
+  flex-flow: row nowrap
+  justify-content: center
+  align-items: center
+  padding: 40px 15%
+  background: $pricing_background
+  @include responce_to($phone-b)
+    padding: 40px 10px
+    flex-flow: column nowrap
+  h3
+    font-size: 2.5em
+    font-weight: 600
+    color: $dark-text
+    vertical-align: center
+    @include responce_to($phone-b)
+      font-size: 2em
+  .subscribe
+    display: flex
+    flex-flow: row nowrap
+    align-items: center
+    justify-content: center
+    margin-left: 20%
+    width: 40%
+    @include responce_to($phone-b)
+      flex-flow: column nowrap
+      align-items: center
+      width: 100%
+      margin: 0
+      padding: 20px 10px
+    input
+      padding: 10px
+      width: 100%
+      height: 100%
+      border: 1px solid #777777
+      border-right: none
+      @include responce_to($phone-b)
+        margin-bottom: 20px
+        border-right: 1px solid #777777
+    .main-button
+      max-height: 100%
+      padding: 9px 39px
